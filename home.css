@@ -1,13 +1,13 @@
 body, html {
     height: 100%;
-    background-color: rgb(225, 225, 225);
+    background-color: rgb(170, 170, 170);
     font-family: Helvetica;
 }
 
 .info-container {
     position: relative;
-    left: 50%;
-
+    left: 42%;
+    top: 5%;
 }
 
 .button {
@@ -23,7 +23,7 @@ body, html {
 }
 
 .description-text {
-    display: inline-block;
+    float: right;
 }
 
 .banner-image { 
@@ -83,4 +83,14 @@ body, html {
     left: 50%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
+}
+
+.desc-container {
+    display: flex;
+    align-items: center;
+}
+  
+.desc-text {
+    font-size: 30px;
+    padding-left: 20px;
 }
