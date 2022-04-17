@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&display=swap');
 
 :root {
     background-color: rgb(29, 26, 26)
@@ -12,6 +12,12 @@
     font-family: 'Roboto Mono', monospace;
 }
 
+img {
+    float: right;
+    margin-right: 30px;
+    max-height: 100%;
+}
+
 h1 {
     font-size: 5.4rem;
     color: #fff;
@@ -21,9 +27,10 @@ h1 {
 
 
 h2 {
-    font-size: 4.2rem;
-    margin-bottom: 4rem;
-
+    color: #fff;
+    font-size: 2rem;
+    margin-top: 20px;
+    margin-bottom: 30px;
 }
 
 .container {
@@ -37,9 +44,15 @@ h2 {
     padding: 2rem;
 }
 
-.flex-column {
+.flex-home {
     display: flex;
     flex-direction: column;
+    margin: auto;
+    align-items: center;
+}
+
+.flex-column {
+    margin: auto;
 }
 
 .flex-center {
@@ -59,16 +72,23 @@ h2 {
     display: none;
 }
 
+
+
 .btn {
     font-size: 2.4rem;
     padding: 2rem 0;
     width: 30rem;
+    height: 72px;
     text-align: center;
     margin-bottom: 1rem;
     text-decoration: none;
-    color: rgb(28, 26, 26);
-    background: linear-gradient(90deg, rgb(18, 92, 255) 0%, rgb(0, 102, 255) 100%);
+    color: #000;
+    background: rgb(20, 90, 255);
     border-radius: 4px;
+}
+
+.home-btn {
+    background-color: rgb(175, 175, 175);
 }
 
 .btn:hover {

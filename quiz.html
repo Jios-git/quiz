@@ -1,45 +1,42 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <link rel="stylesheet" href="quiz.css" type="text/css" />
-    <script type="text/javascript" src="quiz.js"></script>
-    <title>league o' legends</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="quiz.css">
+    <script defer src="quiz.js"></script>
+    <title>Document</title>
 </head>
-
 <body>
-
-    <div class="all">
-
-        <div class="content">
-            <div class="background">
-
-
-
-                <div class="question-title">
-                    <span class="text-span">question<br>question<br>question</span>
+    <div class="container">
+        <div id="game" class="justify-center flex-column">
+            <div id="hud">
+                <div class="hud-item">
+                    <p id="progressText" class="hud-prefix">
+                        Question
+                    </p>
                 </div>
-                <div class="question-1">
-                    <input type="radio" id="q1" name="main" value="q1"checked>
-                    <label for="q1">ans</label>
-                </div>
-                <div class="question-2">
-                    <span class="text-span">ans2<br>ans<br>ans<br>ans</span>
-                </div>
-                <div class="question-3">
-                    <span class="text-span">ans3<br>ans<br>ans<br>ans</span>
-                </div>
-                <div class="question-4">
-                    <span class="text-span">ans4<br>ans<br>ans<br>ans</span>
-                </div>
-
-                <div class="next-button">next</div>
-                <div class="prev-button">prev</div>
-
+            </div>
+            <h1 id="question">What is the answer to this question</h1>
+            <div class="choice-container">
+                <p class="choice-prefix">A</p>
+                <p class="choice-text" data-number="1">Choice</p>
+            </div>
+            <div class="choice-container">
+                <p class="choice-prefix">B</p>
+                <p class="choice-text" data-number="2">Choice 2</p>
+            </div>
+            <div class="choice-container">
+                <p class="choice-prefix">C</p>
+                <p class="choice-text" data-number="3">Choice 3</p>
+            </div>
+            <div class="choice-container">
+                <p class="choice-prefix">D</p>
+                <p class="choice-text" data-number="4">Choice 4</p>
             </div>
         </div>
     </div>
-
 </body>
-
 </html>

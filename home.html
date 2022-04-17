@@ -1,67 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <link rel="stylesheet" href="home.css" type="text/css" />
-    <title>league o' legends</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css" integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossorigin="anonymous">
 </head>
 
 <body>
-    <div class="banner-image" +>
-        <div class="banner-text">
-            <p style="padding:5px 50px 10px 50px; color: black; background-color: white; border: white 2px solid">
-                quiz page -_-</p>
+    <div class="container">
+        <div id="home" class="flex-home">
+            <h1>Pick A Quiz</h1>
+            <h2>Multiple choice questions based on League of Legends.</h2>
+            <a href="quiz.html" class="btn home-btn">Basic Quiz<img src="images/general icon.png"></img></a>
+            <a href="quiz.html" class="btn home-btn">Image Quiz<img src="images/image quiz icon.png"></img></a>
+            <a href="quiz.html" class="btn home-btn">Audio Quiz<img src="images/sound quiz icon.png"></img></a>
+            <h2>You can create a quiz or browse user created quizzes below.</h2>
+            <a href="filechoose.html" class="btn home-btn">Make Your Own<img src="images/edit quiz icon.png"></img></a>
+            <a href="filechoose.html" class="btn home-btn">User Created<img src="images/user quizzes.png"></a>
         </div>
     </div>
-    <div class="info-container">
-        <div class="desc-container">
-            <div class="button-container">
-                <img src="images/general icon.png" alt="general" class="button-image">
-
-                <div class="overlay">
-                    <div class="button-text">
-                        <button onclick="location.href='quiz.html'" class="button">START</button>
-                    </div>
-                </div>
-
-            </div>
-            <div class="desc-text">general knowlegde</br> text-based question</div>
-        </div>
-        <div class="desc-container">
-            <div class="button-container">
-                <img src="images/image quiz icon.png" alt="general" class="button-image">
-                <div class="overlay">
-                    <div class="button-text">
-                        <button onclick="location.href='quiz.html'" class="button">START</button>
-                    </div>
-                </div>
-            </div>
-            <div class="desc-text">select the correct</br> image questions</div>
-        </div>
-        <div class="desc-container">
-            <div class="button-container">
-                <img src="images/sound quiz icon.png" alt="general" class="button-image">
-                <div class="overlay">
-                    <div class="button-text">
-                        <button onclick="location.href='quiz.html'" class="button">START</button>
-                    </div>
-                </div>
-            </div>
-            <div class="desc-text">listen to sounds and</br> pick the right answer</div>
-        </div>
-        <div class="desc-container">
-            <div class="button-container">
-                <img src="images/sound quiz icon.png" alt="general" class="button-image">
-                <div class="overlay">
-                    <div class="button-text">
-                        <button onclick="location.href='results.html'" class="button">START</button>
-                    </div>
-                </div>
-            </div>
-            <div class="desc-text">Your Results</div>
-        </div>
-    </div>
-
 </body>
 
 </html>
