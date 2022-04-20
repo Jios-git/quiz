@@ -48,8 +48,9 @@ body {
 }
 
 .audio-button {
+    position: absolute;
     margin-top: 5px;
-    margin-left: 50px;
+    margin-bottom: 30px;
     background: transparent;
     box-sizing: border-box;
     float: left;
@@ -73,22 +74,16 @@ body {
     border-style: double;
     border-width: 0px 0 0px 45px;
 }
-
-#canvas-container {
+.audio-container {
     position: relative;
-    width: 600px;
-    height: 74px;
-    margin-left: 150px;
-    overflow: hidden;
-    border-top: #fff;
-    border-bottom: #fff;
-    margin-bottom: 30px;
+    height: 200px;
+    width: 800px
 }
-
-#canvas {
-    border-top: solid #fff;
-    border-bottom: solid #fff;
-    border-width: 5px;
+#analyser-render {
+    margin-left: 80px;
+    margin-top: 19px;
+    width: 700px;
+    height: 74px;
 }
 
 
