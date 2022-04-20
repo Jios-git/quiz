@@ -12,6 +12,8 @@ let wrongAnswers = []
 let rightCount = 0;
 let sessionString = sessionStorage.getItem('questions')
 let questions = JSON.parse(sessionString)
+let quizType = sessionStorage.getItem('id')
+console.log(quizType)
 
 var questionCount = questions.length
 

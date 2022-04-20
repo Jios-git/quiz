@@ -13,7 +13,7 @@ body {
     margin-bottom: 0.8rem;
     width: 100%;
     border-radius: 4px;
-    background: rgb(18, 93, 255);
+    background: rgb(20, 90, 255);
     font-size: 3rem;
     min-width: 80rem;
 }
@@ -24,14 +24,14 @@ body {
 }
 
 .correct {
-    background: linear-gradient(32deg, rgba(11, 223, 36) 0%, rgb(41, 232, 111) 100%);
+    background: rgb(0, 200, 20);
 }
 
 .incorrect {
-    background: linear-gradient(32deg, rgba(230, 29, 29, 1) 0%, rgb(224, 11, 11, 1) 100%);
+    background: rgb(220, 10, 10);
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 800px) {
     .choice-container {
         min-width: 40rem;
     }

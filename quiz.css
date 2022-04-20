@@ -7,7 +7,7 @@ body {
     margin-bottom: 0.8rem;
     width: 100%;
     border-radius: 4px;
-    background: rgb(18, 93, 255);
+    background: rgb(20, 90, 255);
     font-size: 3rem;
     min-width: 80rem;
 }
@@ -29,11 +29,12 @@ body {
 }
 
 .correct {
-    background: linear-gradient(32deg, rgba(11, 223, 36) 0%, rgb(41, 232, 111) 100%);
+    background: rgb(0, 200, 20);
+    ;
 }
 
 .incorrect {
-    background: linear-gradient(32deg, rgba(230, 29, 29, 1) 0%, rgb(224, 11, 11, 1) 100%);
+    background: rgb(220, 10, 10);
 }
 
 #hud {
@@ -44,6 +45,58 @@ body {
 .hud-prefix {
     text-align: center;
     font-size: 2rem;
+}
+
+.audio-button {
+    margin-top: 5px;
+    margin-left: 50px;
+    background: transparent;
+    box-sizing: border-box;
+    float: left;
+    width: 0;
+    height: 60px;
+
+    border-color: transparent transparent transparent #ffffff;
+    transition: 100ms all ease;
+    cursor: pointer;
+
+
+    border-style: solid;
+    border-width: 30px 0 30px 45px;
+}
+
+.audio-button:hover {
+    border-color: transparent transparent transparent #d6d6d6;
+}
+
+.pause {
+    border-style: double;
+    border-width: 0px 0 0px 45px;
+}
+
+#canvas-container {
+    position: relative;
+    width: 600px;
+    height: 74px;
+    margin-left: 150px;
+    overflow: hidden;
+    border-top: #fff;
+    border-bottom: #fff;
+    margin-bottom: 30px;
+}
+
+#canvas {
+    border-top: solid #fff;
+    border-bottom: solid #fff;
+    border-width: 5px;
+}
+
+
+#visual-container {
+    position: left;
+    height: 70%;
+    width: 100%;
+    background: black;
 }
 
 @media screen and (max-width: 700px) {
