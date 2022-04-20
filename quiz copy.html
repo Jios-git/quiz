@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="quiz.css">
+    <script defer src="quiz.js"></script>
+    <script defer src="audiothingv2.js"></script>
+    <title>Document</title>
+</head>
+<style>
+    div#mp3_player{ width:500px; height:60px; background:#000; padding:5px; margin:50px auto; }
+    div#mp3_player > div > audio{  width:500px; background:#000; float:left;  }
+    div#mp3_player > canvas{ width:500px; height:30px; background:#002D3C; float:left; }
+/* Removes mute-button */
+audio::-webkit-media-controls-mute-button {
+  display: none;
+}
+
+/* Removes the timeline */
+audio::-webkit-media-controls-timeline {
+  display: none !important;
+}
+
+audio::webkit
+
+/* Removes the time stamp */
+audio::-webkit-media-controls-current-time-display {
+  display: none;
+}
+audio::web {
+  display: none;
+}
+</style>
+<body>
+    
+    
+    <div class="container">
+        
+        <div id="game" class="justify-center flex-column">
+            <div id="hud">
+                <div class="hud-item">
+                    <p id="progressText" class="hud-prefix">
+                        Question
+                    </p>
+                    
+                </div>
+            </div>
+            <h1 class="h1-audio" id="question">What is the answer to this question</h1>
+            
+            
+                <div id="audio_box"></div>
+                <canvas id="analyser_render"></canvas>
+            
+            
+            <div class="choice-container">
+                <p class="choice-prefix">A</p>
+                <p class="choice-text" data-number="1">Choice</p>
+            </div>
+            <div class="choice-container">
+                <p class="choice-prefix">B</p>
+                <p class="choice-text" data-number="2">Choice 2</p>
+            </div>
+            <div class="choice-container">
+                <p class="choice-prefix">C</p>
+                <p class="choice-text" data-number="3">Choice 3</p>
+            </div>
+            <div class="choice-container">
+                <p class="choice-prefix">D</p>
+                <p class="choice-text" data-number="4">Choice 4</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
