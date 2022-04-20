@@ -23,11 +23,10 @@ startGame = () => {
     availableQuestions = [...questions]
     console.log(wrongAnswers)
     getNewQuestion()
-
 }
 
 getNewQuestion = () => {
-    
+
     if (availableQuestions.length === 0 || questionCounter > questionCount) {
         sessionStorage.setItem('wrongAnswers', JSON.stringify(wrongAnswers))
         sessionStorage.setItem('rightCount', JSON.stringify(rightCount))
@@ -42,13 +41,20 @@ getNewQuestion = () => {
 
     const questionsIndex = Math.floor(Math.random() * availableQuestions.length)
     currentQuestion = availableQuestions[questionsIndex]
-    question.innerText = currentQuestion.question
+    var tempQuestion = currentQuestion.question
+    question.innerText = tempQuestion
 
     choices.forEach(choice => {
-        const number = choice.dataset['number']
-        choice.innerText = currentQuestion['choice' + number]
+        if (currentQuestion.question.charAt(0) == 'i') {
+            const number = choice.dataset['number']
+            choice.src = currentQuestion['choice' + number]
+            question.innerText = tempQuestion.substring(1)
+        } else {
+            const number = choice.dataset['number']
+            choice.innerText = currentQuestion['choice' + number]
+        }
     })
-    
+
     availableQuestions.splice(questionsIndex, 1)
     acceptingAnswers = true
 }
@@ -63,7 +69,7 @@ choices.forEach(choice => {
 
         let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect'
         selectedChoice.parentElement.classList.add(classToApply)
-        
+
         setTimeout(() => {
             selectedChoice.parentElement.classList.remove(classToApply)
             getNewQuestion()
@@ -81,7 +87,7 @@ choices.forEach(choice => {
             console.log(rightCount)
         }
     })
-    
+
 })
 
 startGame()

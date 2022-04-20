@@ -12,7 +12,24 @@ body {
     min-width: 80rem;
 }
 
-.choice-container:hover {
+.image-grid {
+    width: 100%;
+    height: 20rem;
+}
+
+.image-container {
+    display: flex;
+    border-radius: 4px;
+    background: rgb(20, 90, 255);
+    min-width: 20%;
+    margin-top: 30px;
+    margin-right: 5%;
+    float: left;
+}
+
+
+
+.choice-container:hover, .image-container:hover {
     cursor: pointer;
     transform: scale(1.02);
     transform: transform 100ms;
@@ -26,6 +43,12 @@ body {
 .choice-text {
     padding: 2rem;
     width: 100%;
+}
+
+.image-choice {
+    width: 100%;
+    padding: 20px;
+    margin: 0;
 }
 
 .correct {
@@ -79,6 +102,7 @@ body {
     height: 200px;
     width: 800px
 }
+
 #analyser-render {
     margin-left: 80px;
     margin-top: 19px;

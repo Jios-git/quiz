@@ -12,7 +12,7 @@ console.log(questions)
 document.getElementById('file').onchange = function () {
 
     var file = this.files[0]
-
+    var imageQuestionCount = 1
     var reader = new FileReader()
     reader.onload = function (progressEvent) {
         // By lines
@@ -52,6 +52,30 @@ document.getElementById('file').onchange = function () {
                 })
                 arrNum++
                 console.log('second' + arrNum)
+            } else if (lines[line].charAt(0) == 'i' && arrNum == 0) {
+                var qtemp = ('' + lines[line]).replace(/\r?\n|\r/g, '')
+                var rtemp = ('' + lines[line + 1]).replace(/\r?\n|\r/g, '')
+                questions[arrNum].question = qtemp
+                questions[arrNum].choice1 = `quizimages/${imageQuestionCount}-1.webp`
+                questions[arrNum].choice2 = `quizimages/${imageQuestionCount}-2.webp`
+                questions[arrNum].choice3 = `quizimages/${imageQuestionCount}-3.webp`
+                questions[arrNum].choice4 = `quizimages/${imageQuestionCount}-4.webp`
+                questions[arrNum].answer = rtemp
+                imageQuestionCount++
+                arrNum++
+            } else if (lines[line].charAt(0) == 'i') {
+                var qtemp = ('' + lines[line]).replace(/\r?\n|\r/g, '')
+                var rtemp = ('' + lines[line + 1]).replace(/\r?\n|\r/g, '')
+                questions.push({
+                    question: qtemp,
+                    choice1: `quizimages/${imageQuestionCount}-1.webp`,
+                    choice2: `quizimages/${imageQuestionCount}-2.webp`,
+                    choice3: `quizimages/${imageQuestionCount}-3.webp`,
+                    choice4: `quizimages/${imageQuestionCount}-4.webp`,
+                    answer: rtemp
+                })
+                imageQuestionCount++
+                arrNum++
             }
         }
         console.log(questions)

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,30 +11,44 @@
     <script defer src="audioquiz.js"></script>
     <title>Document</title>
 </head>
+
 <body>
-    
-    
+
+
     <div class="container">
-        
+
         <div id="game" class="justify-center flex-column">
             <div id="hud">
                 <div class="hud-item">
                     <p id="progressText" class="hud-prefix">
                         Question
                     </p>
-                    
+
                 </div>
             </div>
             <h1 class="h1-audio" id="question">What is the answer to this question</h1>
-            
-            <div id="audio_container">
+
+            <!--<div id="audio_container">
                 <button id="audio-btn" class='audio-button' onclick="togglePlay();"></button>
                 <canvas id="analyser-render"></canvas>
+            </div>-->
+            <div class="image-grid">
+                <div class="image-container">
+                    <img class='choice-text image-choice' data-number="1" src='quizimages/1-1.webp'>
+                </div>
+                <div class="image-container">
+                    <img class='choice-text image-choice' data-number="2" src='quizimages/1-1.webp'>
+                </div>
+                <div class="image-container">
+                    <img class='choice-text image-choice' data-number="3" src='quizimages/1-1.webp'>
+                </div>
+                <div class="image-container">
+                    <img class='choice-text image-choice' data-number="4" src='quizimages/1-1.webp'></p>
+                </div>
             </div>
-            
-            <div class="choice-container">
-                <p class="choice-prefix">A</p>
-                <p class="choice-text" data-number="1">Choice</p>
+            <!--<div class="choice-container">
+                <p class="choice-prefix">B</p>
+                <p class="choice-text" data-number="1">Choice 1</p>
             </div>
             <div class="choice-container">
                 <p class="choice-prefix">B</p>
@@ -46,8 +61,9 @@
             <div class="choice-container">
                 <p class="choice-prefix">D</p>
                 <p class="choice-text" data-number="4">Choice 4</p>
-            </div>
+            </div>-->
         </div>
     </div>
 </body>
+
 </html>
