@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home page</title>
+    <script defer src="filechoose.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css" integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossorigin="anonymous">
 </head>
@@ -14,9 +16,9 @@
         <div id="home" class="flex-home">
             <h1>Pick A Quiz</h1>
             <h2>Multiple choice questions based on League of Legends.</h2>
-            <a href="quiz.html" class="btn home-btn" onClick="sessionStorage.setItem('id', 'basic')">Basic Quiz<img src="images/general icon.png"></img></a>
-            <a href="quiz.html" class="btn home-btn" onClick="sessionStorage.setItem('id', 'image')">Image Quiz<img src="images/image quiz icon.png"></img></a>
-            <a href="quiz.html" class="btn home-btn" onClick="sessionStorage.setItem('id', 'audio')">Audio Quiz<img src="images/sound quiz icon.png"></img></a>
+            <a href="quiz.html" class="btn home-btn" onclick="sessionStorage.setItem('id', 'basic');setQuiz();">Basic Quiz<img src="images/general icon.png"></img></a>
+            <a href="quiz.html" class="btn home-btn" onClick="sessionStorage.setItem('id', 'image');setQuiz();">Image Quiz<img src="images/image quiz icon.png"></img></a>
+            <a href="quiz.html" class="btn home-btn" onClick="sessionStorage.setItem('id', 'audio');setQuiz();">Audio Quiz<img src="images/sound quiz icon.png"></img></a>
             <h2>You can create a quiz or browse user created quizzes below.</h2>
             <a href="filechoose.html" class="btn home-btn">Make Your Own<img src="images/edit quiz icon.png"></img></a>
             <a href="filechoose.html" class="btn home-btn">User Created<img src="images/user quizzes.png"></a>

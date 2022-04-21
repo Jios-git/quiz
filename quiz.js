@@ -1,5 +1,5 @@
 const question = document.querySelector('#question');
-const choices = Array.from(document.querySelectorAll('.choice-text'));
+var choices;
 const progressText = document.querySelector('#progressText');
 const scoreText = document.querySelector('#score');
 
@@ -22,6 +22,74 @@ startGame = () => {
     score = 0
     availableQuestions = [...questions]
     console.log(wrongAnswers)
+    const questionsIndex = Math.floor(Math.random() * availableQuestions.length)
+    currentQuestion = availableQuestions[questionsIndex]
+    if (currentQuestion.question.charAt(0) == 'i') {
+        document.getElementById('question-insert').innerHTML = `<div class="image-grid">
+        <div class="image-container">
+            <img class='choice-text image-choice' data-number="1" src='quizimages/1-1.webp'>
+        </div>
+        <div class="image-container">
+            <img class='choice-text image-choice' data-number="2" src='quizimages/1-1.webp'>
+        </div>
+        <div class="image-container">
+            <img class='choice-text image-choice' data-number="3" src='quizimages/1-1.webp'>
+        </div>
+        <div class="image-container">
+            <img class='choice-text image-choice' data-number="4" src='quizimages/1-1.webp'></p>
+        </div>
+        </div>`
+    } else {
+        document.getElementById('question-insert').innerHTML = `
+        <div class="choice-container">
+            <p class="choice-prefix">B</p>
+            <p class="choice-text" data-number="1">Choice 1</p>
+        </div>
+        <div class="choice-container">
+            <p class="choice-prefix">B</p>
+            <p class="choice-text" data-number="2">Choice 2</p>
+        </div>
+        <div class="choice-container">
+            <p class="choice-prefix">C</p>
+            <p class="choice-text" data-number="3">Choice 3</p>
+        </div>
+        <div class="choice-container">
+            <p class="choice-prefix">D</p>
+            <p class="choice-text" data-number="4">Choice 4</p>
+        </div>`
+    }
+    choices = Array.from(document.querySelectorAll('.choice-text'));
+    choices.forEach(choice => {
+        choice.addEventListener('click', e => {
+            if (!acceptingAnswers) return
+
+            acceptingAnswers = false
+            const selectedChoice = e.target
+            const selectedAnswer = selectedChoice.dataset['number']
+
+            let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect'
+            selectedChoice.parentElement.classList.add(classToApply)
+
+            setTimeout(() => {
+                selectedChoice.parentElement.classList.remove(classToApply)
+                getNewQuestion()
+
+            }, 1000)
+            if (classToApply == 'incorrect') {
+                wrongAnswers.push({
+                    question: currentQuestion['question'],
+                    right: currentQuestion['choice' + currentQuestion.answer],
+                    wrong: currentQuestion['choice' + selectedAnswer]
+                })
+                console.log(wrongAnswers)
+            } else if (classToApply == 'correct') {
+                rightCount++
+                console.log(rightCount)
+            }
+        })
+
+    })
+
     getNewQuestion()
 }
 
@@ -43,7 +111,30 @@ getNewQuestion = () => {
     currentQuestion = availableQuestions[questionsIndex]
     var tempQuestion = currentQuestion.question
     question.innerText = tempQuestion
+    console.log(currentQuestion.question)
+    /*if (currentQuestion.question.charAt(0) == 'i') {
+        
+    } else {
+        document.getElementById('question-insert').innerHTML = `
+        <div class="choice-container">
+            <p class="choice-prefix">B</p>
+            <p class="choice-text" data-number="1">Choice 1</p>
+        </div>
+        <div class="choice-container">
+            <p class="choice-prefix">B</p>
+            <p class="choice-text" data-number="2">Choice 2</p>
+        </div>
+        <div class="choice-container">
+            <p class="choice-prefix">C</p>
+            <p class="choice-text" data-number="3">Choice 3</p>
+        </div>
+        <div class="choice-container">
+            <p class="choice-prefix">D</p>
+            <p class="choice-text" data-number="4">Choice 4</p>
+        </div>`
+    }*/
 
+    choices = Array.from(document.querySelectorAll('.choice-text'));
     choices.forEach(choice => {
         if (currentQuestion.question.charAt(0) == 'i') {
             const number = choice.dataset['number']
@@ -59,7 +150,7 @@ getNewQuestion = () => {
     acceptingAnswers = true
 }
 
-choices.forEach(choice => {
+/*choices.forEach(choice => {
     choice.addEventListener('click', e => {
         if (!acceptingAnswers) return
 
@@ -88,6 +179,6 @@ choices.forEach(choice => {
         }
     })
 
-})
+})*/
 
 startGame()
