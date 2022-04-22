@@ -12,11 +12,11 @@ var quizType;
 quizType = sessionStorage.getItem('id')
 console.log(quizType)
 if (quizType == 'basic') {
-    quizType = 'https://jios-git.github.io/quiz/questions.txt'
+    quizType = 'questions.txt'
 } else if (quizType == 'image') {
-    quizType = 'https://jios-git.github.io/quiz/imagequiz.txt'
+    quizType = 'imagequiz.txt'
 } else if (quizType == 'audio') {
-    quizType = 'https://jios-git.github.io/quiz/audioquiz.txt'
+    quizType = 'quiz/audioquiz.txt'
 }
 var rawFile;
 if (quizType != undefined) {
@@ -33,7 +33,7 @@ function setQuiz(files) {
 
     if (quizType != undefined) {
         //var file = files[0]
-        var file = 'https://jios-git.github.io/quiz/questions.txt'
+        var file = 'quiz/questions.txt'
 
         //file = 'questions.txt'
         var imageQuestionCount = 1
