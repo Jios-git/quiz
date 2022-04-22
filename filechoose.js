@@ -15,8 +15,8 @@ if (quizType == 'basic') {
     quizType = 'https://jios-git.github.io/quiz/questions.txt'
 } else if (quizType == 'image') {
     quizType = 'https://jios-git.github.io/quiz/imagequiz.txt'
-} else if (quizType == 'sound') {
-    quizType = 'https://jios-git.github.io/quiz/questions.txt'
+} else if (quizType == 'audio') {
+    quizType = 'https://jios-git.github.io/quiz/audioquiz.txt'
 }
 var rawFile;
 if (quizType != undefined) {
@@ -106,27 +106,35 @@ function setQuiz(files) {
                     })
                     imageQuestionCount++
                     arrNum++
-                } else if (lines[line].substring(0,4) == 'audio' && arrNum == 0) {
+                } else if (lines[line].substring(0,5) == 'audio' && arrNum == 0) {
                     console.log('i')
                     var qtemp = ('' + lines[line]).replace(/\r?\n|\r/g, '')
+                    var temp1 = ('' + lines[line + 1]).replace(/\r?\n|\r/g, '')
+                    var temp2 = ('' + lines[line + 2]).replace(/\r?\n|\r/g, '')
+                    var temp3 = ('' + lines[line + 3]).replace(/\r?\n|\r/g, '')
+                    var temp4 = ('' + lines[line + 4]).replace(/\r?\n|\r/g, '')
                     var rtemp = ('' + lines[line + 1]).replace(/\r?\n|\r/g, '')
                     questions[arrNum].question = qtemp
-                    questions[arrNum].choice1 = ''
-                    questions[arrNum].choice2 = ''
-                    questions[arrNum].choice3 = ''
-                    questions[arrNum].choice4 = ''
+                    questions[arrNum].choice1 = temp1
+                    questions[arrNum].choice2 = temp2
+                    questions[arrNum].choice3 = temp3
+                    questions[arrNum].choice4 = temp4
                     questions[arrNum].answer = rtemp
                     imageQuestionCount++
                     arrNum++
-                } else if (lines[line].substring(0,4) == 'audio') {
+                } else if (lines[line].substring(0,5) == 'audio') {
                     var qtemp = ('' + lines[line]).replace(/\r?\n|\r/g, '')
+                    var temp1 = ('' + lines[line + 1]).replace(/\r?\n|\r/g, '')
+                    var temp2 = ('' + lines[line + 2]).replace(/\r?\n|\r/g, '')
+                    var temp3 = ('' + lines[line + 3]).replace(/\r?\n|\r/g, '')
+                    var temp4 = ('' + lines[line + 4]).replace(/\r?\n|\r/g, '')
                     var rtemp = ('' + lines[line + 1]).replace(/\r?\n|\r/g, '')
                     questions.push({
                         question: qtemp,
-                        choice1: '',
-                        choice2: '',
-                        choice3: '',
-                        choice4: '',
+                        choice1: temp1,
+                        choice2: temp2,
+                        choice3: temp3,
+                        choice4: temp4,
                         answer: rtemp
                     })
                     imageQuestionCount++
