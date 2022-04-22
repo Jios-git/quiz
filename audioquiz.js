@@ -1,8 +1,11 @@
 // Create a new instance of an audio object and adjust some of its properties
+function audioElement(){
 var audio = new Audio();
 audio.src = 'audio/Fall.mp3';
 audio.loop = true;
 var btn = document.getElementById("audio-btn");
+var audioCount = sessionString.getItem('audioCount')
+console.log(audioCount)
 
 function togglePlay() {
   if (audio.paused) {
@@ -47,4 +50,5 @@ function frameLooper() {
     //  fillRect( x, y, width, height ) // Explanation of the parameters below
     ctx.fillRect(bar_x, canvas.height, bar_width, bar_height);
   }
+}
 }

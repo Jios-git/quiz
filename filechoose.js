@@ -106,7 +106,7 @@ function setQuiz(files) {
                     })
                     imageQuestionCount++
                     arrNum++
-                } else if (lines[line].charAt(0) == 'a' && arrNum == 0) {
+                } else if (lines[line].substring(0,4) == 'audio' && arrNum == 0) {
                     console.log('i')
                     var qtemp = ('' + lines[line]).replace(/\r?\n|\r/g, '')
                     var rtemp = ('' + lines[line + 1]).replace(/\r?\n|\r/g, '')
@@ -118,7 +118,7 @@ function setQuiz(files) {
                     questions[arrNum].answer = rtemp
                     imageQuestionCount++
                     arrNum++
-                } else if (lines[line].charAt(0) == 'a') {
+                } else if (lines[line].substring(0,4) == 'audio') {
                     var qtemp = ('' + lines[line]).replace(/\r?\n|\r/g, '')
                     var rtemp = ('' + lines[line + 1]).replace(/\r?\n|\r/g, '')
                     questions.push({

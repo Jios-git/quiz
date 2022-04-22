@@ -13,10 +13,12 @@ let rightCount = 0;
 let sessionString = sessionStorage.getItem('questions')
 let questions = JSON.parse(sessionString)
 let quizType = sessionStorage.getItem('id')
-console.log(quizType)
+sessionStorage.setItem('audioCount', "1")
+audioCount = parseInt(sessionStorage.getItem('audioCount'))
+console.log(questions)
+console.log(audioCount)
 
 var questionCount = questions.length
-
 startGame = () => {
     questionCounter = 0
     score = 0
@@ -25,7 +27,8 @@ startGame = () => {
     const questionsIndex = Math.floor(Math.random() * availableQuestions.length)
     currentQuestion = availableQuestions[questionsIndex]
     if (currentQuestion.question.charAt(0) == 'i') {
-        document.getElementById('question-insert').innerHTML = `<div class="image-grid">
+        document.getElementById('question-insert').innerHTML = 
+        `<div class="image-grid">
         <div class="image-container">
             <img class='choice-text image-choice' data-number="1" src='quizimages/1-1.webp'>
         </div>
@@ -39,10 +42,34 @@ startGame = () => {
             <img class='choice-text image-choice' data-number="4" src='quizimages/1-1.webp'></p>
         </div>
         </div>`
-    } else {
-        document.getElementById('question-insert').innerHTML = `
+    }  else if (currentQuestion.question.substring(0,4) == 'audio') {
+        document.getElementById('question-insert').innerHTML = 
+        `<div id="audio_container">
+        <button id="audio-btn" class='audio-button' onclick="(audioElement()).togglePlay();"></button>
+        <canvas id="analyser-render"></canvas>
+        </div>
+        <div class="choice-container">
+            <p class="choice-prefix">A</p>
+            <p class="choice-text" data-number="1">Choice 1</p>
+        </div>
         <div class="choice-container">
             <p class="choice-prefix">B</p>
+            <p class="choice-text" data-number="2">Choice 2</p>
+        </div>
+        <div class="choice-container">
+            <p class="choice-prefix">C</p>
+            <p class="choice-text" data-number="3">Choice 3</p>
+        </div>
+        <div class="choice-container">
+            <p class="choice-prefix">D</p>
+            <p class="choice-text" data-number="4">Choice 4</p>
+        </div>`
+        audioCount++
+        sessionStorage.setItem('audioCount', ''+audioCount)
+    } else {
+        document.getElementById('question-insert').innerHTML = 
+        `<div class="choice-container">
+            <p class="choice-prefix">A</p>
             <p class="choice-text" data-number="1">Choice 1</p>
         </div>
         <div class="choice-container">
@@ -58,6 +85,7 @@ startGame = () => {
             <p class="choice-text" data-number="4">Choice 4</p>
         </div>`
     }
+
     choices = Array.from(document.querySelectorAll('.choice-text'));
     choices.forEach(choice => {
         choice.addEventListener('click', e => {
