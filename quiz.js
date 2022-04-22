@@ -24,8 +24,8 @@ startGame = () => {
     score = 0
     availableQuestions = [...questions]
     console.log(wrongAnswers)
-    const questionsIndex = Math.floor(Math.random() * availableQuestions.length)
-    currentQuestion = availableQuestions[questionsIndex]
+    currentQuestion = availableQuestions[questionCounter]
+    console.log(currentQuestion)
     if (currentQuestion.question.charAt(0) == 'i') {
         document.getElementById('question-insert').innerHTML = 
         `<div class="image-grid">
@@ -42,10 +42,10 @@ startGame = () => {
             <img class='choice-text image-choice' data-number="4" src='quizimages/1-1.webp'></p>
         </div>
         </div>`
-    }  else if (currentQuestion.question.substring(0,4) == 'audio') {
+    }  else if (currentQuestion.question.substring(0,5) == 'audio') {
         document.getElementById('question-insert').innerHTML = 
         `<div id="audio_container">
-        <button id="audio-btn" class='audio-button' onclick="(audioElement()).togglePlay();"></button>
+        <button id="audio-btn" class='audio-button' onclick="togglePlay();"></button>
         <canvas id="analyser-render"></canvas>
         </div>
         <div class="choice-container">
@@ -122,8 +122,7 @@ startGame = () => {
 }
 
 getNewQuestion = () => {
-
-    if (availableQuestions.length === 0 || questionCounter > questionCount) {
+    if (availableQuestions.length == 0 || questionCounter >= questionCount) {
         sessionStorage.setItem('wrongAnswers', JSON.stringify(wrongAnswers))
         sessionStorage.setItem('rightCount', JSON.stringify(rightCount))
         sessionStorage.setItem('questionCount', JSON.stringify(questionCount))
@@ -135,32 +134,12 @@ getNewQuestion = () => {
     questionCounter++
     progressText.innerText = `Question ${questionCounter} of ${questionCount}`
 
-    const questionsIndex = Math.floor(Math.random() * availableQuestions.length)
-    currentQuestion = availableQuestions[questionsIndex]
+    currentQuestion = availableQuestions[questionCounter-1]
+    console.log(questionCount)
     var tempQuestion = currentQuestion.question
     question.innerText = tempQuestion
     console.log(currentQuestion.question)
-    /*if (currentQuestion.question.charAt(0) == 'i') {
-        
-    } else {
-        document.getElementById('question-insert').innerHTML = `
-        <div class="choice-container">
-            <p class="choice-prefix">B</p>
-            <p class="choice-text" data-number="1">Choice 1</p>
-        </div>
-        <div class="choice-container">
-            <p class="choice-prefix">B</p>
-            <p class="choice-text" data-number="2">Choice 2</p>
-        </div>
-        <div class="choice-container">
-            <p class="choice-prefix">C</p>
-            <p class="choice-text" data-number="3">Choice 3</p>
-        </div>
-        <div class="choice-container">
-            <p class="choice-prefix">D</p>
-            <p class="choice-text" data-number="4">Choice 4</p>
-        </div>`
-    }*/
+    
 
     choices = Array.from(document.querySelectorAll('.choice-text'));
     choices.forEach(choice => {
@@ -174,7 +153,7 @@ getNewQuestion = () => {
         }
     })
 
-    availableQuestions.splice(questionsIndex, 1)
+    availableQuestions.splice(questionCount, 1)
     acceptingAnswers = true
 }
 
@@ -208,5 +187,5 @@ getNewQuestion = () => {
     })
 
 })*/
-
+console.log(questionCount)
 startGame()

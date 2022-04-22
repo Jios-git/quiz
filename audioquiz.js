@@ -1,14 +1,23 @@
 // Create a new instance of an audio object and adjust some of its properties
-function audioElement(){
+
+var audioCount = parseInt(sessionStorage.getItem('audioCount'))
+
 var audio = new Audio();
-audio.src = 'audio/Fall.mp3';
 audio.loop = true;
-var btn = document.getElementById("audio-btn");
-var audioCount = sessionString.getItem('audioCount')
 console.log(audioCount)
+audio.src = `https://jios-git.github.io/quiz/audio/2.mp3`;
+console.log(audio.src)
+var btn = document.getElementById("audio-btn");
+var firstToggle = true
+
 
 function togglePlay() {
-  if (audio.paused) {
+  if (audio.paused && firstToggle == true) {
+    audio.play()
+    initMp3Player()
+    btn.classList.toggle("pause")
+    firstToggle = false
+  } else if (audio.paused) {
     audio.play()
     btn.classList.toggle("pause")
   }
@@ -21,8 +30,11 @@ function togglePlay() {
 // Establish all variables that your Analyser will use
 var canvas, ctx, source, context, analyser, fbc_array, bars, bar_x, bar_width, bar_height;
 // Initialize the MP3 player after the page loads all of its HTML into the window
-window.addEventListener("load", initMp3Player, false);
+//btn.addEventListener("click", initMp3Player, false);
+
 function initMp3Player() {
+  console.log(audio)
+  console.log('init')
   document.getElementById('audio_container').appendChild(audio);
   context = new AudioContext(); // AudioContext object instance
   analyser = context.createAnalyser(); // AnalyserNode method
@@ -34,6 +46,7 @@ function initMp3Player() {
   analyser.connect(context.destination);
   frameLooper();
 }
+
 // frameLooper() animates any style of graphics you wish to the audio frequency
 // Looping at the default frame rate that the browser provides(approx. 60 FPS)
 function frameLooper() {
@@ -50,5 +63,4 @@ function frameLooper() {
     //  fillRect( x, y, width, height ) // Explanation of the parameters below
     ctx.fillRect(bar_x, canvas.height, bar_width, bar_height);
   }
-}
 }

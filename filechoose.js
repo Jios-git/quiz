@@ -113,7 +113,7 @@ function setQuiz(files) {
                     var temp2 = ('' + lines[line + 2]).replace(/\r?\n|\r/g, '')
                     var temp3 = ('' + lines[line + 3]).replace(/\r?\n|\r/g, '')
                     var temp4 = ('' + lines[line + 4]).replace(/\r?\n|\r/g, '')
-                    var rtemp = ('' + lines[line + 1]).replace(/\r?\n|\r/g, '')
+                    var rtemp = ('' + lines[line + 5]).replace(/\r?\n|\r/g, '')
                     questions[arrNum].question = qtemp
                     questions[arrNum].choice1 = temp1
                     questions[arrNum].choice2 = temp2
@@ -128,7 +128,7 @@ function setQuiz(files) {
                     var temp2 = ('' + lines[line + 2]).replace(/\r?\n|\r/g, '')
                     var temp3 = ('' + lines[line + 3]).replace(/\r?\n|\r/g, '')
                     var temp4 = ('' + lines[line + 4]).replace(/\r?\n|\r/g, '')
-                    var rtemp = ('' + lines[line + 1]).replace(/\r?\n|\r/g, '')
+                    var rtemp = ('' + lines[line + 5]).replace(/\r?\n|\r/g, '')
                     questions.push({
                         question: qtemp,
                         choice1: temp1,
