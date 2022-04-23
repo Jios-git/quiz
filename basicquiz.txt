@@ -16,7 +16,7 @@ The Ruination
 Nexus Blitz
 K/DA
 2
-qwhat was the level cap?
+qWhat was the level cap?
 100
 50
 30
@@ -28,11 +28,11 @@ Robot
 Yeti
 Polar Bear
 1
-qwhat is a teemo main considered to have?
-no friends
-no soul
-a creepy laugh
-a huge brain
+qWhat is a teemo main considered to have?
+No friends
+No soul
+A creepy laugh
+A huge brain
 2
 qWhat skin line did tyler1 cosplay for his comeback?
 Gladiator
@@ -46,3 +46,16 @@ Naps
 Craps
 Naps
 3
+qHow old is Zoe?
+5000
+7
+14
+300
+1
+qWhat does it mean to feed?
+To get a lot of gold through kills or cs
+To die a lot
+To go afk for dinner
+To help an ally in lane
+2
+

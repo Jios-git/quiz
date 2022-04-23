@@ -7,7 +7,7 @@ function getType() {
     quizType = sessionStorage.getItem('id')
     console.log(quizType)
     if (quizType == 'basic') {
-        quizType = 'https://jios-git.github.io/quiz/questions.txt'
+        quizType = 'https://jios-git.github.io/quiz/basicquiz.txt'
     } else if (quizType == 'image') {
         quizType = 'https://jios-git.github.io/quiz/imagequiz.txt'
     } else if (quizType == 'audio') {

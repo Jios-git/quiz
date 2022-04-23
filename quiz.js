@@ -135,6 +135,9 @@ getNewQuestion = () => {
 
     currentQuestion = availableQuestions[questionCounter-1]
     var tempQuestion = currentQuestion.question
+    if (tempQuestion.substring(0,5) == "audio") {
+        tempQuestion = tempQuestion.substring(5)
+    }
     question.innerText = tempQuestion
     
 

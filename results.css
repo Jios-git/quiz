@@ -4,8 +4,10 @@ body {
 
 .wrong-question {
     font-size: 2rem;
+    width: 100%;
     margin-top: 10px;
     margin-bottom: 15px;
+    float: left;
 }
 
 .choice-container {
@@ -16,6 +18,23 @@ body {
     background: rgb(20, 90, 255);
     font-size: 3rem;
     min-width: 80rem;
+}
+
+
+.image-result-container {
+    display: flex;
+    border-radius: 4px;
+    background: rgb(20, 90, 255);
+    width: 30%;
+    margin-top: 30px;
+    margin-right: 5%;
+    float: left;
+}
+
+.image-choice {
+    width: 100%;
+    padding: 20px;
+    margin: 0;
 }
 
 .choice-text {

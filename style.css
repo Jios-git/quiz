@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&display=swap');
 
 :root {
-    background-color: rgb(29, 26, 26)
+    background-image:url('images/blackcracksbackground.jpg');
 }
 
 * {

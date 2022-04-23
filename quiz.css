@@ -27,8 +27,6 @@ body {
     float: left;
 }
 
-
-
 .choice-container:hover, .image-container:hover {
     cursor: pointer;
     transform: scale(1.02);

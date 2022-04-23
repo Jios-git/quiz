@@ -1,12 +1,59 @@
-audioWhen seraphine says this line, what ability is used?
-Q
-W
-E
-R
-1
 audioWhat champion does this song relate to?
 Teemo
 Varus
 Kassadin
 Ryze
 2
+audioWhat Akshan ability does this voice line relate to?
+Q
+W
+E
+R
+2
+audioWhat Seraphine ability does this voice line relate to?
+Q
+W
+E
+R
+1
+audioWhen does Ornn say this?
+First Movement
+When killing an enemy champion
+When he respawns
+When he is banned in champion select
+3
+audioWhat band is this song made by?
+True Damage
+K/DA
+Pentakill
+Star Guardians
+3
+audioWhat champion says this?
+Blitzcrank
+Urgot
+Tahm Kench
+Nautilus
+4
+audioWhen does Vex say this?
+When getting a Pentakill
+When killing an enemy champion
+When she dies
+First Encounter with Viego
+2
+audioWhat champion says this?
+Sett
+Wukong
+Rumble
+Ezreal
+audioWhat champion is Xerath Referencing
+Nasus
+Renekton
+Azir
+Sivir
+2
+audioWhat Omega Squad skin champion says this?
+Teemo
+Tristana
+Veigar
+Fizz
+1
