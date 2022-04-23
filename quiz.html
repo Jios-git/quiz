@@ -12,7 +12,29 @@
     <title>Document</title>
 </head>
 
+<script>
+    function openSide() {
+        document.getElementById("sidebar").style.display = "block";
+    }
+
+    function closeSide() {
+        document.getElementById("sidebar").style.display = "none";
+    }
+    function change(type) {
+        window.location.href
+        sessionStorage.setItem('id', type);
+        getType();
+        window.open('quiz.html');
+    }
+</script>
+
 <body>
+    <div class="sidebar" style="display:none" id="sidebar">
+        <a onclick="closeSide()" class="bar-item">Close ☰</a>
+        <a href="home.html" class="bar-item">Home Page</a>
+        <a href="filechoose.html" class="bar-item">Make Your Own</a>
+    </div>
+    <a class="side-button" onclick="openSide()">☰</a>
 
     <div class="container">
 

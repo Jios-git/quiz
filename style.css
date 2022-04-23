@@ -12,6 +12,51 @@
     font-family: 'Roboto Mono', monospace;
 }
 
+.sidebar {
+    height: 100%;
+    width: 200px;
+    background-color: rgb(100, 100, 100);
+    position: fixed !important;
+    z-index: 1;
+    overflow: auto;
+}
+
+.side-button {
+    font-size: 30px;
+    display:inline-block;
+    padding:8px 16px;
+    text-align:center;
+    cursor:pointer;
+    color:rgb(0, 0, 0);
+    background-color:rgb(175, 175, 175);
+    font-size: 24px;
+}
+
+.side-button:hover {
+    
+    background-color:rgb(145, 145, 145);
+    
+}
+
+.bar-item{
+    font-size: 20px;
+    color: #000;
+    text-decoration: none;
+    padding:8px 16px;
+    background-color:rgb(175, 175, 175);
+    width:100%;
+    border:none;
+    text-align: center;
+    white-space:nowrap;
+    cursor: pointer;
+    display:block;
+    outline:0
+}
+
+.bar-item:hover {
+    background-color:rgb(145, 145, 145);
+}
+
 img {
     float: right;
     margin-right: 30px;
@@ -104,8 +149,3 @@ h2 {
     box-shadow: none;
     transform: none;
 }
-
-
-
-
-

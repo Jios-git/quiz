@@ -1,45 +1,53 @@
-var questions = [
-    {
-        question: 'temp',
-        choice1: 'temp',
-        choice2: 'temp',
-        choice3: 'temp',
-        choice4: 'temp',
-        answer: 1,
-    }]
-console.log(questions)
+
+
 var quizType;
-quizType = sessionStorage.getItem('id')
-console.log(quizType)
-if (quizType == 'basic') {
-    quizType = 'questions.txt'
-} else if (quizType == 'image') {
-    quizType = 'imagequiz.txt'
-} else if (quizType == 'audio') {
-    quizType = 'quiz/audioquiz.txt'
-}
 var rawFile;
-if (quizType != undefined) {
-    $.get(quizType, function (data) {
-        //process text file line by line
-        console.log('1')
-        //console.log(data)
-        rawFile = data
-    });
+
+function getType() {
+    quizType = sessionStorage.getItem('id')
+    console.log(quizType)
+    if (quizType == 'basic') {
+        quizType = 'https://jios-git.github.io/quiz/questions.txt'
+    } else if (quizType == 'image') {
+        quizType = 'https://jios-git.github.io/quiz/imagequiz.txt'
+    } else if (quizType == 'audio') {
+        quizType = 'https://jios-git.github.io/quiz/audioquiz.txt'
+    }
+    
+    
+    if (quizType != undefined) {
+        console.log(quizType)
+        $.get(quizType, function (data) {
+            //process text file line by line
+            console.log('2')
+            //console.log(data)
+            rawFile = data
+            setQuiz()
+        });
+        
+    }
 }
 
 function setQuiz(files) {
 
+    var questions = [
+        {
+            question: 'temp',
+            choice1: 'temp',
+            choice2: 'temp',
+            choice3: 'temp',
+            choice4: 'temp',
+            answer: 1,
+        }]
 
     if (quizType != undefined) {
         //var file = files[0]
-        var file = 'quiz/questions.txt'
-
+        //var file = 'https://jios-git.github.io/quiz/questions.txt'
+        console.log(rawFile)
         //file = 'questions.txt'
         var imageQuestionCount = 1
-        console.log(rawFile)
+        //console.log(rawFile)
         var reader = new FileReader()
-        console.log('2')
         // By lines
         if (files != undefined) {
             console.log('yes')
@@ -47,7 +55,7 @@ function setQuiz(files) {
             var lines = rawFile.split('\n')
             var arrNum = 0
             for (var line = 0; line < lines.length; line++) {
-                console.log(lines[line])
+
                 if (lines[line].charAt(0) == 'q' && arrNum == 0) {
                     //.replace(/\r?\n|\r/g, '')
                     var qtemp = ('' + lines[line]).replace(/\r?\n|\r/g, '')
@@ -106,7 +114,7 @@ function setQuiz(files) {
                     })
                     imageQuestionCount++
                     arrNum++
-                } else if (lines[line].substring(0,5) == 'audio' && arrNum == 0) {
+                } else if (lines[line].substring(0, 5) == 'audio' && arrNum == 0) {
                     console.log('i')
                     var qtemp = ('' + lines[line]).replace(/\r?\n|\r/g, '')
                     var temp1 = ('' + lines[line + 1]).replace(/\r?\n|\r/g, '')
@@ -122,7 +130,7 @@ function setQuiz(files) {
                     questions[arrNum].answer = rtemp
                     imageQuestionCount++
                     arrNum++
-                } else if (lines[line].substring(0,5) == 'audio') {
+                } else if (lines[line].substring(0, 5) == 'audio') {
                     var qtemp = ('' + lines[line]).replace(/\r?\n|\r/g, '')
                     var temp1 = ('' + lines[line + 1]).replace(/\r?\n|\r/g, '')
                     var temp2 = ('' + lines[line + 2]).replace(/\r?\n|\r/g, '')

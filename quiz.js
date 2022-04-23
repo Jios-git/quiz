@@ -15,8 +15,6 @@ let questions = JSON.parse(sessionString)
 let quizType = sessionStorage.getItem('id')
 sessionStorage.setItem('audioCount', "1")
 audioCount = parseInt(sessionStorage.getItem('audioCount'))
-console.log(questions)
-console.log(audioCount)
 
 var questionCount = questions.length
 startGame = () => {
@@ -50,7 +48,7 @@ startGame = () => {
         </div>
         <div class="choice-container">
             <p class="choice-prefix">A</p>
-            <p class="choice-text" data-number="1">Choice 1</p>
+            <p class="choice-text" data-number="1" onclick="buttonPress=true;togglePlay();">Choice 1</p>
         </div>
         <div class="choice-container">
             <p class="choice-prefix">B</p>
@@ -64,8 +62,9 @@ startGame = () => {
             <p class="choice-prefix">D</p>
             <p class="choice-text" data-number="4">Choice 4</p>
         </div>`
-        audioCount++
         sessionStorage.setItem('audioCount', ''+audioCount)
+        audioCount++
+        
     } else {
         document.getElementById('question-insert').innerHTML = 
         `<div class="choice-container">
@@ -135,10 +134,8 @@ getNewQuestion = () => {
     progressText.innerText = `Question ${questionCounter} of ${questionCount}`
 
     currentQuestion = availableQuestions[questionCounter-1]
-    console.log(questionCount)
     var tempQuestion = currentQuestion.question
     question.innerText = tempQuestion
-    console.log(currentQuestion.question)
     
 
     choices = Array.from(document.querySelectorAll('.choice-text'));
@@ -187,5 +184,4 @@ getNewQuestion = () => {
     })
 
 })*/
-console.log(questionCount)
 startGame()
