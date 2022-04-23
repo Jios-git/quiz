@@ -4,12 +4,6 @@ Viego
 Akshan
 Yummi
 1
-qWhere does Voyboy go to get serious?
-The Park
-The Chair
-The Stairs
-The Wall
-3
 qWhat event was received worst by the community?
 Star Guardian Invasion
 The Ruination
@@ -34,6 +28,12 @@ No soul
 A creepy laugh
 A huge brain
 2
+qWhere does Voyboy go to get serious?
+The Park
+The Chair
+The Stairs
+The Wall
+3
 qWhat skin line did tyler1 cosplay for his comeback?
 Gladiator
 Soul Reaver

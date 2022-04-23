@@ -13,8 +13,6 @@ let rightCount = 0;
 let sessionString = sessionStorage.getItem('questions')
 let questions = JSON.parse(sessionString)
 let quizType = sessionStorage.getItem('id')
-sessionStorage.setItem('audioCount', "1")
-audioCount = parseInt(sessionStorage.getItem('audioCount'))
 
 var questionCount = questions.length
 startGame = () => {
@@ -52,18 +50,16 @@ startGame = () => {
         </div>
         <div class="choice-container">
             <p class="choice-prefix">B</p>
-            <p class="choice-text" data-number="2">Choice 2</p>
+            <p class="choice-text" data-number="2" onclick="buttonPress=true;togglePlay();">Choice 2</p>
         </div>
         <div class="choice-container">
             <p class="choice-prefix">C</p>
-            <p class="choice-text" data-number="3">Choice 3</p>
+            <p class="choice-text" data-number="3" onclick="buttonPress=true;togglePlay();">Choice 3</p>
         </div>
         <div class="choice-container">
             <p class="choice-prefix">D</p>
-            <p class="choice-text" data-number="4">Choice 4</p>
+            <p class="choice-text" data-number="4" onclick="buttonPress=true;togglePlay();">Choice 4</p>
         </div>`
-        sessionStorage.setItem('audioCount', ''+audioCount)
-        audioCount++
         
     } else {
         document.getElementById('question-insert').innerHTML = 

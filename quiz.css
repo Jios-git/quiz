@@ -21,7 +21,7 @@ body {
     display: flex;
     border-radius: 4px;
     background: rgb(20, 90, 255);
-    min-width: 20%;
+    width: 20%;
     margin-top: 30px;
     margin-right: 5%;
     float: left;
