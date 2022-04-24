@@ -123,7 +123,7 @@ getNewQuestion = () => {
         sessionStorage.setItem('questionCount', JSON.stringify(questionCount))
         console.log(questionCount)
         console.log(rightCount)
-        return window.location.assign('/results.html')
+        return window.location.assign('/quiz/results.html')
     }
 
     questionCounter++
