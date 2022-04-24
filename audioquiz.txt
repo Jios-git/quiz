@@ -5,16 +5,16 @@ Kassadin
 Ryze
 2
 audioWhat Akshan ability does this voice line relate to?
-Q - High Note
-W - Surround Sound
-E - Beat Drop
-R - Encore
-2
-audioWhat Seraphine ability does this voice line relate to?
 Q - Avengerang
 W - Going Rogue
 E - Heroic Swing
 R - Comeuppance
+2
+audioWhat Seraphine ability does this voice line relate to?
+Q - High Note
+W - Surround Sound
+E - Beat Drop
+R - Encore
 1
 audioWhen does Ornn say this?
 First Movement
