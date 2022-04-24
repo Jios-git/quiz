@@ -123,7 +123,7 @@ getNewQuestion = () => {
         sessionStorage.setItem('questionCount', JSON.stringify(questionCount))
         console.log(questionCount)
         console.log(rightCount)
-        return window.location.assign('/quiz/results.html')
+        return window.location.href = 'https://jios-git.github.io/quiz/results.html'
     }
 
     questionCounter++
