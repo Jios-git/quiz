@@ -13,7 +13,7 @@ let rightCount = 0;
 let sessionString = sessionStorage.getItem('questions')
 let questions = JSON.parse(sessionString)
 let quizType = sessionStorage.getItem('id')
-
+console.log(questions)
 var questionCount = questions.length
 startGame = () => {
     questionCounter = 0
