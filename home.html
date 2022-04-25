@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home page</title>
-    <script defer src="filechoose.js"></script>
+    <script src="filechoose.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css"
@@ -13,6 +13,12 @@
 </head>
 
 <script>
+    sessionStorage.setItem('id', 'basic');
+    getType();
+    sessionStorage.setItem('id', 'image');
+    getType();
+    sessionStorage.setItem('id', 'audio');
+    getType();
     function openSide() {
         document.getElementById("sidebar").style.display = "block";
     }
