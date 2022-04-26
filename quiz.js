@@ -3,6 +3,8 @@ var choices;
 const progressText = document.querySelector('#progressText');
 const scoreText = document.querySelector('#score');
 
+getType();
+
 let currentQuestion = {}
 let acceptingAnswers = true
 let score = 0
@@ -12,9 +14,11 @@ let wrongAnswers = []
 let rightCount = 0;
 let sessionString = sessionStorage.getItem('questions')
 let questions = JSON.parse(sessionString)
-let quizType = sessionStorage.getItem('id')
 console.log(questions)
 var questionCount = questions.length
+
+
+
 startGame = () => {
     questionCounter = 0
     score = 0
@@ -62,8 +66,7 @@ startGame = () => {
         </div>`
         
     } else {
-        document.getElementById('question-insert').innerHTML = 
-        `<div class="choice-container">
+        document.getElementById('question-insert').innerHTML = `<div class="choice-container">
             <p class="choice-prefix">A</p>
             <p class="choice-text" data-number="1">Choice 1</p>
         </div>

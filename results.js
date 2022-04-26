@@ -1,5 +1,5 @@
-let sessionString = sessionStorage.getItem('wrongAnswers')
-let rightCount = sessionStorage.getItem('rightCount')
+let sessionString = localStorage.getItem('wrongAnswers')
+let rightCount = localStorage.getItem('rightCount')
 let questionCount = sessionStorage.getItem('questionCount')
 let wrongAnswers = JSON.parse(sessionString)
 console.log(questionCount)

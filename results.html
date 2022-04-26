@@ -12,6 +12,10 @@
         integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossorigin="anonymous">
 </head>
 <script>
+    function delay (URL) {
+        setTimeout( function() { window.location = URL }, 300 );
+    }
+
     function openSide() {
         document.getElementById("sidebar").style.display = "block";
     }
@@ -25,6 +29,9 @@
     <div class="sidebar" style="display:none" id="sidebar">
         <a onclick="closeSide()" class="bar-item">Close ☰</a>
         <a href="home.html" class="bar-item">Home Page</a>
+        <a href="javascript:delay('quiz.html')" class="bar-item" onClick="sessionStorage.setItem('id', 'basic');getType();sessionStorage.setItem('id', 'basic');getType();">Basic Quiz</a>
+        <a href="javascript:delay('quiz.html')" class="bar-item" onClick="sessionStorage.setItem('id', 'image');getType();sessionStorage.setItem('id', 'image');getType();">Image Quiz</a>
+        <a href="javascript:delay('quiz.html')" class="bar-item" onClick="sessionStorage.setItem('id', 'audio');getType();">Audio Quiz</a>
     </div>
     <a class="side-button" onclick="openSide()">☰</a>
 

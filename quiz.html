@@ -7,12 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="quiz.css">
+    <script src="audioquiz.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="filechoose.js"></script>
     <script defer src="quiz.js"></script>
-    <script defer src="audioquiz.js"></script>
     <title>Document</title>
 </head>
 
 <script>
+    function delay (URL) {
+        setTimeout( function() { window.location = URL }, 300 );
+    }
+
     function openSide() {
         document.getElementById("sidebar").style.display = "block";
     }
@@ -20,18 +26,15 @@
     function closeSide() {
         document.getElementById("sidebar").style.display = "none";
     }
-    function change(type) {
-        window.location.href
-        sessionStorage.setItem('id', type);
-        getType();
-        window.open('quiz.html');
-    }
 </script>
 
 <body>
     <div class="sidebar" style="display:none" id="sidebar">
         <a onclick="closeSide()" class="bar-item">Close ☰</a>
         <a href="home.html" class="bar-item">Home Page</a>
+        <a href="javascript:delay('quiz.html')" class="bar-item" onClick="sessionStorage.setItem('id', 'basic');getType();sessionStorage.setItem('id', 'basic');getType();">Basic Quiz</a>
+        <a href="javascript:delay('quiz.html')" class="bar-item" onClick="sessionStorage.setItem('id', 'image');getType();sessionStorage.setItem('id', 'image');getType();">Image Quiz</a>
+        <a href="javascript:delay('quiz.html')" class="bar-item" onClick="sessionStorage.setItem('id', 'audio');getType();">Audio Quiz</a>
     </div>
     <a class="side-button" onclick="openSide()">☰</a>
 
@@ -46,7 +49,7 @@
                 </div>
             </div>
             <h1 class="h1-audio" id="question">What is the answer to this question</h1>
-            <div id="question-insert"></div>
+            <div id='question-insert'></div>
             <!--<div id="audio_container">
                 <button id="audio-btn" class='audio-button' onclick="togglePlay();"></button>
                 <canvas id="analyser-render"></canvas>

@@ -13,12 +13,23 @@
 </head>
 
 <script>
+    /*sessionStorage.setItem('id', 'basic');
+    getType();
     sessionStorage.setItem('id', 'basic');
+    getType();
+    sessionStorage.setItem('id', 'image');
     getType();
     sessionStorage.setItem('id', 'image');
     getType();
     sessionStorage.setItem('id', 'audio');
     getType();
+    sessionStorage.setItem('id', 'audio');
+    getType();*/
+
+    function delay (URL) {
+        setTimeout( function() { window.location = URL }, 300 );
+    }
+
     function openSide() {
         document.getElementById("sidebar").style.display = "block";
     }
@@ -32,21 +43,20 @@
     <div class="sidebar" style="display:none" id="sidebar">
         <a onclick="closeSide()" class="bar-item">Close ☰</a>
         <a href="home.html" class="bar-item">Home Page</a>
-        <a href="quiz.html" class="bar-item" onClick="sessionStorage.setItem('id', 'basic');getType();">Basic Quiz</a>
-        <a href="quiz.html" class="bar-item" onClick="sessionStorage.setItem('id', 'image');getType();">Image Quiz</a>
-        <a href="quiz.html" class="bar-item" onClick="sessionStorage.setItem('id', 'audio');getType();">Audio Quiz</a>
-        
+        <a href="javascript:delay('quiz.html')" class="bar-item" onClick="sessionStorage.setItem('id', 'basic');getType();sessionStorage.setItem('id', 'basic');getType();">Basic Quiz</a>
+        <a href="javascript:delay('quiz.html')" class="bar-item" onClick="sessionStorage.setItem('id', 'image');getType();sessionStorage.setItem('id', 'image');getType();">Image Quiz</a>
+        <a href="javascript:delay('quiz.html')" class="bar-item" onClick="sessionStorage.setItem('id', 'audio');getType();">Audio Quiz</a>
     </div>
     <a class="side-button" onclick="openSide()">☰</a>
     <div class="container">
         <div id="home" class="flex-home">
             <h1>Pick A Quiz</h1>
             <h2>Multiple choice questions based on League of Legends.</h2>
-            <a href="quiz.html" class="btn home-btn" onclick="sessionStorage.setItem('id', 'basic');getType();">Basic
+            <a href="javascript:delay('quiz.html')" class="btn home-btn" onclick="sessionStorage.setItem('id', 'basic');getType();">Basic
                 Quiz<img src="images/general icon.png"></img></a>
-            <a href="quiz.html" class="btn home-btn" onClick="sessionStorage.setItem('id', 'image');getType();">Image
+            <a href="javascript:delay('quiz.html')" class="btn home-btn" onClick="sessionStorage.setItem('id', 'image');getType();">Image
                 Quiz<img src="images/image quiz icon.png"></img></a>
-            <a href="quiz.html" class="btn home-btn" onClick="sessionStorage.setItem('id', 'audio');getType();">Audio
+            <a href="javascript:delay('quiz.html')" class="btn home-btn" onClick="sessionStorage.setItem('id', 'audio');getType();">Audio
                 Quiz<img src="images/sound quiz icon.png"></img></a>
             <!--<h2>You can create a quiz or browse user created quizzes below.</h2>
             <a href="filechoose.html" class="btn home-btn">Make Your Own<img src="images/edit quiz icon.png"></img></a>
