@@ -14,7 +14,6 @@ let wrongAnswers = [];
 let rightCount = 0;
 let sessionString = sessionStorage.getItem('questions');
 let questions = JSON.parse(sessionString);
-console.log(questions);
 var questionCount = questions.length;
 
 //initilizing varibles and HTML that will be used in a different
@@ -109,10 +108,8 @@ startGame = () => {
                     right: currentQuestion['option' + currentQuestion.answer],
                     wrong: currentQuestion['option' + selectedAnswer]
                 })
-                console.log(wrongAnswers)
             } else if (classToApply == 'correct') {
                 rightCount++;
-                console.log(rightCount);
             }
         })
 
@@ -126,8 +123,6 @@ getNextQuestion = () => {
         sessionStorage.setItem('wrongAnswers', JSON.stringify(wrongAnswers));
         sessionStorage.setItem('rightCount', JSON.stringify(rightCount));
         sessionStorage.setItem('questionCount', JSON.stringify(questionCount));
-        console.log(questionCount);
-        console.log(rightCount);
         return window.location.href = 'https://jios-git.github.io/quiz/results.html';
     }
 

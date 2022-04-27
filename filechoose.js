@@ -6,7 +6,7 @@ var rawFile;
 function getType() {
     
     quizType = sessionStorage.getItem('id')
-    
+
     if (quizType == 'basic') {
         quizType = 'https://jios-git.github.io/quiz/basicquiz.txt';
     } else if (quizType == 'image') {
@@ -42,12 +42,10 @@ function setQuiz(files) {
 
     if (quizType != undefined) {
         //var file = files[0]
-        console.log(rawFile);
         var imageQuestionCount = 1;
         var reader = new FileReader();
 
         if (files != undefined) {
-            console.log('yes');
         } else {
             var lines = rawFile.split('\n');
             var arrNum = 0;
@@ -146,9 +144,7 @@ function setQuiz(files) {
                 }
             }
         }
-        console.log(questions);
         sessionStorage.setItem("questions", JSON.stringify(questions));
-        console.log(sessionStorage.getItem("questions"));
     }
 }
 

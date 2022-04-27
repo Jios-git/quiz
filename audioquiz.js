@@ -11,12 +11,11 @@ var audioCount = 1;
 function togglePlay() {
   
   if (buttonPress == true) {
-    audioCount++; console.log(audioCount);
+    audioCount++;
   }
 
   if (audio.paused && !btn.classList.contains("pause") && firstToggle == true) {
     audio.src = `audio/${audioCount}.mp3`;
-    console.log('first press');
     loadPlayer();
     btn.classList.toggle("pause");
     audio.play();
@@ -24,12 +23,10 @@ function togglePlay() {
   } else if (buttonPress == true) {
     buttonPress = false;
     audio.src = `audio/${audioCount}.mp3`;
-    console.log('pause on next question' + audioCount);
 
     if (audio.paused && btn.classList.contains("pause")) {
       btn.classList.toggle("pause");
       audio.pause();
-      console.log(4);
     }
 
     loadPlayer();
@@ -37,11 +34,9 @@ function togglePlay() {
   } else if (audio.paused && !btn.classList.contains("pause")) {
     audio.play();
     btn.classList.toggle("pause");
-    console.log('start audio');
   } else {
     audio.pause();
     btn.classList.toggle("pause");
-    console.log(6);
   }
 }
 
@@ -54,7 +49,6 @@ var canvas = [], ctx = [], source = [], context = [], analyser = [], fbc_array, 
 //variables because .createMediaElementSource() can not create a new source
 //if the variable already had one created
 function loadPlayer() {
-  console.log('visualCount ' + visualCount);
   context[visualCount] = new AudioContext();
   document.getElementById('audio_container').appendChild(audio);
   analyser[visualCount] = context[visualCount].createAnalyser();
@@ -66,7 +60,6 @@ function loadPlayer() {
   source[visualCount].connect(analyser[visualCount]);
   analyser[visualCount].connect(context[visualCount].destination);
   visualCount++;
-  console.log('visualCount ' + visualCount);
   frames();
 
 }

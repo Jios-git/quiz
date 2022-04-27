@@ -2,9 +2,6 @@ let sessionString = sessionStorage.getItem('wrongAnswers');
 let rightCount = sessionStorage.getItem('rightCount');
 let questionCount = sessionStorage.getItem('questionCount');
 let wrongAnswers = JSON.parse(sessionString);
-console.log(questionCount);
-console.log(rightCount);
-console.log(wrongAnswers);
 
 const title = document.createElement('h1');
 title.innerHTML = `<h1 id="question">${rightCount} out of ${questionCount} correct</h1>`;
