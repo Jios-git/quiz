@@ -8,7 +8,7 @@ body {
     margin-bottom: 15px;
 }
 
-.choice-container {
+.option-container {
     display: flex;
     margin-bottom: 0.8rem;
     width: 100%;
@@ -18,7 +18,7 @@ body {
     min-width: 80rem;
 }
 
-.choice-text {
+.option-text {
     padding: 2rem;
     width: 100%;
 }
@@ -32,7 +32,7 @@ body {
 }
 
 @media screen and (max-width: 768px) {
-    .choice-container {
+    .option-container {
         min-width: 40rem;
     }
 }

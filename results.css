@@ -10,7 +10,7 @@ body {
     float: left;
 }
 
-.choice-container {
+.option-container {
     display: flex;
     margin-bottom: 0.8rem;
     width: 100%;
@@ -31,13 +31,13 @@ body {
     float: left;
 }
 
-.image-choice {
+.image-option {
     width: 100%;
     padding: 20px;
     margin: 0;
 }
 
-.choice-text {
+.option-text {
     padding: 2rem;
     width: 100%;
 }
@@ -51,7 +51,7 @@ body {
 }
 
 @media screen and (max-width: 800px) {
-    .choice-container {
+    .option-container {
         min-width: 40rem;
     }
 }

@@ -2,7 +2,7 @@ body {
     color: #fff;
 }
 
-.choice-container {
+.option-container {
     display: flex;
     margin-bottom: 0.8rem;
     width: 100%;
@@ -27,23 +27,23 @@ body {
     float: left;
 }
 
-.choice-container:hover, .image-container:hover {
+.option-container:hover, .image-container:hover {
     cursor: pointer;
     transform: scale(1.02);
     transform: transform 100ms;
 }
 
-.choice-prefix {
+.option-prefix {
     padding: 2rem 2.5rem;
     color: white;
 }
 
-.choice-text {
+.option-text {
     padding: 2rem;
     width: 100%;
 }
 
-.image-choice {
+.image-option {
     width: 100%;
     padding: 20px;
     margin: 0;
@@ -117,7 +117,7 @@ body {
 }
 
 @media screen and (max-width: 700px) {
-    .choice-container {
+    .option-container {
         min-width: 40rem;
     }
 }

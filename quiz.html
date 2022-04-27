@@ -8,12 +8,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="quiz.css">
+    <link rel="icon" href="https://icon-library.com/images/league-of-legends-icon/league-of-legends-icon-11.jpg">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="filechoose.js"></script>
     <script defer src="quiz.js"></script>
     <script defer src="audioquiz.js"></script>
 
     <title>Document</title>
+
 </head>
 
 <script>
@@ -34,8 +36,8 @@
     <div class="sidebar" style="display:none" id="sidebar">
         <a onclick="closeSide()" class="bar-item">Close ☰</a>
         <a href="home.html" class="bar-item">Home Page</a>
-        <a href="javascript:delay('quiz.html')" class="bar-item" onClick="sessionStorage.setItem('id', 'basic');getType();sessionStorage.setItem('id', 'basic');getType();">Basic Quiz</a>
-        <a href="javascript:delay('quiz.html')" class="bar-item" onClick="sessionStorage.setItem('id', 'image');getType();sessionStorage.setItem('id', 'image');getType();">Image Quiz</a>
+        <a href="javascript:delay('quiz.html')" class="bar-item" onClick="sessionStorage.setItem('id', 'basic');getType();">Basic Quiz</a>
+        <a href="javascript:delay('quiz.html')" class="bar-item" onClick="sessionStorage.setItem('id', 'image');getType();">Image Quiz</a>
         <a href="javascript:delay('quiz.html')" class="bar-item" onClick="sessionStorage.setItem('id', 'audio');getType();">Audio Quiz</a>
     </div>
     <a class="side-button" onclick="openSide()">☰</a>
@@ -58,33 +60,33 @@
             </div>-->
             <!--<div class="image-grid">
                 <div class="image-container">
-                    <img class='choice-text image-choice' data-number="1" src='quizimages/1-1.webp'>
+                    <img class='option-text image-option' data-number="1" src='quizimages/1-1.webp'>
                 </div>
                 <div class="image-container">
-                    <img class='choice-text image-choice' data-number="2" src='quizimages/1-1.webp'>
+                    <img class='option-text image-option' data-number="2" src='quizimages/1-1.webp'>
                 </div>
                 <div class="image-container">
-                    <img class='choice-text image-choice' data-number="3" src='quizimages/1-1.webp'>
+                    <img class='option-text image-option' data-number="3" src='quizimages/1-1.webp'>
                 </div>
                 <div class="image-container">
-                    <img class='choice-text image-choice' data-number="4" src='quizimages/1-1.webp'></p>
+                    <img class='option-text image-option' data-number="4" src='quizimages/1-1.webp'></p>
                 </div>
             </div>-->
-            <!--<div class="choice-container">
-                <p class="choice-prefix">B</p>
-                <p class="choice-text" data-number="1">Choice 1</p>
+            <!--<div class="option-container">
+                <p class="option-prefix">B</p>
+                <p class="option-text" data-number="1">option 1</p>
             </div>
-            <div class="choice-container">
-                <p class="choice-prefix">B</p>
-                <p class="choice-text" data-number="2">Choice 2</p>
+            <div class="option-container">
+                <p class="option-prefix">B</p>
+                <p class="option-text" data-number="2">option 2</p>
             </div>
-            <div class="choice-container">
-                <p class="choice-prefix">C</p>
-                <p class="choice-text" data-number="3">Choice 3</p>
+            <div class="option-container">
+                <p class="option-prefix">C</p>
+                <p class="option-text" data-number="3">option 3</p>
             </div>
-            <div class="choice-container">
-                <p class="choice-prefix">D</p>
-                <p class="choice-text" data-number="4">Choice 4</p>
+            <div class="option-container">
+                <p class="option-prefix">D</p>
+                <p class="option-text" data-number="4">option 4</p>
             </div>-->
         </div>
     </div>

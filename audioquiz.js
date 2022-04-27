@@ -1,80 +1,80 @@
-// Create a new instance of an audio object and adjust some of its properties
-
-
-
 var audio = new Audio();
 audio.loop = true;
-audio.volume = 0.2
+audio.volume = 0.2;
 var btn = document.getElementById("audio-btn");
-var firstToggle = true
-var buttonPress = false
-var visualCount = 0
+var firstToggle = true;
+var buttonPress = false;
+var visualCount = 0;
 var audioCount = 1;
 
+//function will be called every time the play/pause button is pressed
 function togglePlay() {
   
   if (buttonPress == true) {
-    audioCount++; console.log(audioCount)
+    audioCount++; console.log(audioCount);
   }
 
   if (audio.paused && !btn.classList.contains("pause") && firstToggle == true) {
     audio.src = `audio/${audioCount}.mp3`;
-    console.log('first press')
-    initMp3Player()
-    btn.classList.toggle("pause")
-    audio.play()
-    firstToggle = false
+    console.log('first press');
+    loadPlayer();
+    btn.classList.toggle("pause");
+    audio.play();
+    firstToggle = false;
   } else if (buttonPress == true) {
-    buttonPress = false
+    buttonPress = false;
     audio.src = `audio/${audioCount}.mp3`;
-    console.log('pause on next question' + audioCount)
+    console.log('pause on next question' + audioCount);
 
     if (audio.paused && btn.classList.contains("pause")) {
-      btn.classList.toggle("pause")
-      audio.pause()
-      console.log(4)
+      btn.classList.toggle("pause");
+      audio.pause();
+      console.log(4);
     }
 
-    initMp3Player()
+    loadPlayer();
 
   } else if (audio.paused && !btn.classList.contains("pause")) {
-    audio.play()
-    btn.classList.toggle("pause")
-    console.log('start audio')
+    audio.play();
+    btn.classList.toggle("pause");
+    console.log('start audio');
   } else {
-    audio.pause()
-    btn.classList.toggle("pause")
-    console.log(6)
+    audio.pause();
+    btn.classList.toggle("pause");
+    console.log(6);
   }
 }
 
-// Establish all variables that your Analyser will use
+//establishing all variables that analyser will use
 var canvas = [], ctx = [], source = [], context = [], analyser = [], fbc_array, bars, bar_x, bar_width, bar_height;
-// Initialize the MP3 player after the page loads all of its HTML into the window
-//btn.addEventListener("click", initMp3Player, false);
 
-function initMp3Player() {
-  console.log('visualCount ' + visualCount)
+//audio analyser adapted from http://www.developphp.com/video/JavaScript/Analyser-Bars-Animation-HTML-Audio-API-Tutorial
+
+//each time this function is called I needed to make an array to have new
+//variables because .createMediaElementSource() can not create a new source
+//if the variable already had one created
+function loadPlayer() {
+  console.log('visualCount ' + visualCount);
   context[visualCount] = new AudioContext();
   document.getElementById('audio_container').appendChild(audio);
-  analyser[visualCount] = context[visualCount].createAnalyser(); // AnalyserNode method
+  analyser[visualCount] = context[visualCount].createAnalyser();
   canvas[visualCount] = document.getElementById('analyser-render');
   ctx[visualCount] = canvas[visualCount].getContext('2d');
-  // Re-route audio playback into the processing graph of the AudioContext
+  
 
   source[visualCount] = context[visualCount].createMediaElementSource(audio);
   source[visualCount].connect(analyser[visualCount]);
   analyser[visualCount].connect(context[visualCount].destination);
-  visualCount++
-  console.log('visualCount ' + visualCount)
-  frameLooper();
+  visualCount++;
+  console.log('visualCount ' + visualCount);
+  frames();
 
 }
 
-// frameLooper() animates any style of graphics you wish to the audio frequency
-// Looping at the default frame rate that the browser provides(approx. 60 FPS)
-function frameLooper() {
-  window.requestAnimationFrame(frameLooper);
+//frames() creates a frame relating to the audio frequency, this is looped at the
+//default frame rate provided by the browser
+function frames() {
+  window.requestAnimationFrame(frames);
   fbc_array = new Uint8Array(1024);
   analyser[visualCount - 1].getByteFrequencyData(fbc_array);
   ctx[visualCount - 1].clearRect(0, 0, canvas[visualCount - 1].width, canvas[visualCount - 1].height); // Clear the canvas
@@ -84,7 +84,6 @@ function frameLooper() {
     bar_x = i * 5;
     bar_width = 3;
     bar_height = -(fbc_array[i] / 2);
-    //  fillRect( x, y, width, height ) // Explanation of the parameters below
     ctx[visualCount - 1].fillRect(bar_x, canvas[visualCount - 1].height, bar_width, bar_height);
   }
 }

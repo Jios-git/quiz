@@ -7,24 +7,13 @@
     <title>Home page</title>
     <script src="filechoose.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <link rel="icon" href="https://icon-library.com/images/league-of-legends-icon/league-of-legends-icon-11.jpg">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css"
         integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossorigin="anonymous">
 </head>
 
 <script>
-    /*sessionStorage.setItem('id', 'basic');
-    getType();
-    sessionStorage.setItem('id', 'basic');
-    getType();
-    sessionStorage.setItem('id', 'image');
-    getType();
-    sessionStorage.setItem('id', 'image');
-    getType();
-    sessionStorage.setItem('id', 'audio');
-    getType();
-    sessionStorage.setItem('id', 'audio');
-    getType();*/
 
     function delay (URL) {
         setTimeout( function() { window.location = URL }, 300 );
@@ -37,6 +26,7 @@
     function closeSide() {
         document.getElementById("sidebar").style.display = "none";
     }
+    
 </script>
 
 <body>
@@ -51,7 +41,7 @@
     <div class="container">
         <div id="home" class="flex-home">
             <h1>Pick A Quiz</h1>
-            <h2>Multiple choice questions based on League of Legends.</h2>
+            <h2>Multiple option questions based on League of Legends.</h2>
             <a href="javascript:delay('quiz.html')" class="btn home-btn" onclick="sessionStorage.setItem('id', 'basic');getType();">Basic
                 Quiz<img src="images/general icon.png"></img></a>
             <a href="javascript:delay('quiz.html')" class="btn home-btn" onClick="sessionStorage.setItem('id', 'image');getType();">Image
