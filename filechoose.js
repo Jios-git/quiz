@@ -26,7 +26,7 @@ function getType() {
     }
 }
 
-//the parameter is unused, but what intended to be used in filechoose.html where
+//the parameter is unused, but was intended to be used in filechoose.html where
 //the user could upload their own quiz
 function setQuiz(files) {
 
